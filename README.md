@@ -2,6 +2,8 @@
 
 A web-based volleyball analytics platform I built to help coaches and players understand performance metrics through interactive visualizations and predictive modeling. This started as a personal project to explore how machine learning concepts could be applied to sports analytics.
 
+**Live Demo**: https://shreeya1-pixel.github.io/VolleyVision/index.html
+
 ## What This Does
 
 ### Core Features
@@ -132,4 +134,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-*Built with the goal of making sports analytics more accessible and useful for coaches and players.* 
+*Built with the goal of making sports analytics more accessible and useful for coaches and players.*
