@@ -106,7 +106,10 @@ Some features I'm considering adding:
 
 ## Why I Built This
 
-I've always been interested in both sports analytics and machine learning. This project was a way to combine those interests while learning more about data visualization and predictive modeling. The goal was to create something that could actually be useful for volleyball coaches and players, not just a demo.
+I’ve been playing volleyball since the 6th grade — it’s been a massive part of my life. I captained the national-level volleyball team for Delhi, represented in IPSC tournaments, and trained under coaches who always emphasized performance tracking.
+But the truth is, even at elite levels, we never really had access to good analytical tools. Our coaches often said, “I wish we had something to help us see patterns, like what’s working, who’s dropping, what the numbers say.” That stuck with me.
+
+So when I got into AI/ML, I knew I wanted to build something that wasn't just a technical demo, but something real — a platform that could actually help coaches and players understand the game better through data. This project is my attempt at bridging those two worlds: the athlete and the engineer in me.
 
 ## Technical Challenges
 
