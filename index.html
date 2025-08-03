@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VolleyVision AI - Advanced ML Volleyball Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>VolleyVision AI</h1>
+                <p class="tagline">Advanced ML Volleyball Analytics</p>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
+                <button class="nav-btn" data-tab="analytics">ML Analytics</button>
+                <button class="nav-btn" data-tab="predictions">AI Predictions</button>
+                <button class="nav-btn" data-tab="similarity">Player Similarity</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Dashboard Tab -->
+            <div class="tab-content active" id="dashboard">
+                <div class="dashboard-grid">
+                    <!-- Input Section -->
+                    <section class="input-section">
+                        <h2>Player Performance Input</h2>
+                        <p class="section-description">Enter match statistics to generate advanced ML analytics and AI predictions.</p>
+                        
+                        <form id="statsForm" class="stats-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="spikes">Spikes</label>
+                                    <input type="number" id="spikes" name="spikes" min="0" value="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="blocks">Blocks</label>
+                                    <input type="number" id="blocks" name="blocks" min="0" value="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="serves">Serves</label>
+                                    <input type="number" id="serves" name="serves" min="0" value="0" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="digs">Digs</label>
+                                    <input type="number" id="digs" name="digs" min="0" value="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="errors">Errors</label>
+                                    <input type="number" id="errors" name="errors" min="0" value="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sets">Sets</label>
+                                    <input type="number" id="sets" name="sets" min="0" value="0" required>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" id="autofillBtn" class="btn btn-secondary">Autofill Sample</button>
+                                <button type="submit" class="btn btn-primary">Generate ML Analytics</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Results Section -->
+                    <section class="results-section">
+                        <h2>Advanced ML Analytics</h2>
+                        
+                        <!-- Performance Score -->
+                        <div class="score-card">
+                            <div class="score-header">
+                                <h3>AI Efficiency Score</h3>
+                                <div class="score-badge" id="efficiencyScore">--</div>
+                            </div>
+                            <div class="score-description">
+                                <p>ML-powered efficiency calculation with weighted performance metrics and anomaly detection.</p>
+                            </div>
+                        </div>
+
+                        <!-- Chart Container -->
+                        <div class="chart-container">
+                            <h3>Performance Breakdown</h3>
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+
+                        <!-- Radar Chart -->
+                        <div class="chart-container">
+                            <h3>Skill Radar Analysis</h3>
+                            <canvas id="radarChart"></canvas>
+                        </div>
+
+                        <!-- Team Comparison Section -->
+                        <div class="team-comparison-section">
+                            <h3>Team Comparison (Optional)</h3>
+                            <p class="section-description">Add other players' data to compare team performance and rankings.</p>
+                            
+                            <div class="team-actions">
+                                <button type="button" class="btn btn-secondary" onclick="volleyVision.addOtherPlayer()">Add Player</button>
+                                <button type="button" class="btn btn-primary" onclick="volleyVision.analyzeOtherPlayers()">Analyze Team</button>
+                            </div>
+                            
+                            <div id="otherPlayersContainer" class="other-players-container">
+                                <!-- Other players forms will be added here -->
+                            </div>
+                            
+                            <div id="teamComparisonResults" class="team-comparison-results">
+                                <!-- Team comparison results will be shown here -->
+                            </div>
+                            
+                            <div class="chart-container" id="teamComparisonChartContainer" style="display: none;">
+                                <h3>Team Performance Comparison</h3>
+                                <canvas id="teamComparisonChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Predictions -->
+                        <div class="predictions-container">
+                            <h3>AI Predictions</h3>
+                            <div class="prediction-grid">
+                                <div class="prediction-card">
+                                    <h4>Next Match Performance</h4>
+                                    <p class="prediction-value" id="nextMatchPrediction">--</p>
+                                </div>
+                                <div class="prediction-card">
+                                    <h4>Improvement Areas</h4>
+                                    <p class="prediction-value" id="improvementAreas">--</p>
+                                </div>
+                                <div class="prediction-card">
+                                    <h4>ML Confidence Level</h4>
+                                    <p class="prediction-value" id="confidenceLevel">--</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ML Analytics Tab -->
+            <div class="tab-content" id="analytics">
+                <h2>Advanced Machine Learning Analytics</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Time-Series Forecasting (Prophet-like)</h3>
+                        <p class="card-description">Predicts future performance using historical data patterns and trend analysis.</p>
+                        <canvas id="forecastChart"></canvas>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Anomaly Detection with SHAP</h3>
+                        <p class="card-description">Identifies exceptional performances and explains contributing factors using SHAP-like explanations.</p>
+                        <div class="anomaly-info">
+                            <div class="anomaly-status" id="anomalyStatus">No anomalies detected</div>
+                            <div class="anomaly-explanation" id="anomalyExplanation"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Predictions Tab -->
+            <div class="tab-content" id="predictions">
+                <h2>AI-Powered Predictions & Insights</h2>
+                <div class="predictions-grid">
+                    <div class="prediction-insight">
+                        <h3>Performance Forecasting</h3>
+                        <div class="forecast-chart">
+                            <canvas id="forecastChart2"></canvas>
+                        </div>
+                    </div>
+                    <div class="prediction-insight">
+                        <h3>ML Recommendations</h3>
+                        <ul class="recommendations-list" id="recommendationsList">
+                            <li>Enter your stats to see personalized ML recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Player Similarity Tab -->
+            <div class="tab-content" id="similarity">
+                <h2>Player Similarity Search (Cosine Similarity)</h2>
+                <div class="similarity-grid">
+                    <div class="similarity-card">
+                        <h3>Current Player Profile</h3>
+                        <div class="player-profile">
+                            <div class="profile-info">
+                                <h4>Skill Analysis</h4>
+                                <p>Your performance mapped across 6 key dimensions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="similarity-card">
+                        <h3>Similar Players (KNN Algorithm)</h3>
+                        <div class="similar-players">
+                            <div class="similar-player" id="similarPlayer1">
+                                <h4>Most Similar Player</h4>
+                                <p class="player-name">--</p>
+                                <p class="similarity-score">--</p>
+                            </div>
+                            <div class="similar-player" id="similarPlayer2">
+                                <h4>Second Most Similar</h4>
+                                <p class="player-name">--</p>
+                                <p class="similarity-score">--</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="similarity-chart-container">
+                    <h3>Skill Comparison Radar</h3>
+                    <canvas id="similarPlayersChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 VolleyVision AI. Advanced ML volleyball analytics with time-series forecasting, anomaly detection, and player similarity search.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
