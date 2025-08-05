@@ -11,9 +11,8 @@ This project was personally inspired by my extensive volleyball background. I ha
 
 - **National Level Volleyball Player** - Captain of national level teams
 - **IPSC (Inter Public School Championship)** - Represented school in competitive tournaments
-- **Inter School Competitions** - Multiple championships and tournaments
 - **Inter University Competitions** - University level volleyball competitions
-- **BSF (UAE's Largest Sports Festival)** - Competed in one of the biggest sports festivals in the UAE
+- **BSF (UAE's Largest Sports Festival)** - Competed in the biggest sports festivals in the UAE
 
 My deep understanding of volleyball dynamics, player performance metrics, and the need for data-driven insights in sports analytics motivated me to create this machine learning platform. This project combines my passion for volleyball with my expertise in machine learning to provide meaningful performance analysis and predictions.
 
