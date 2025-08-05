@@ -4,6 +4,19 @@ A web-based volleyball analytics platform I built to help coaches and players un
 
 **Live Demo**: https://shreeya1-pixel.github.io/VolleyVision/index.html
 
+
+## About ME 
+
+This project was personally inspired by my extensive volleyball background. I have been playing volleyball since 6th grade and have competed at various levels including:
+
+- **National Level Volleyball Player** - Captain of national level teams
+- **IPSC (Inter Public School Championship)** - Represented school in competitive tournaments
+- **Inter School Competitions** - Multiple championships and tournaments
+- **Inter University Competitions** - University level volleyball competitions
+- **BSF (UAE's Largest Sports Festival)** - Competed in one of the biggest sports festivals in the UAE
+
+My deep understanding of volleyball dynamics, player performance metrics, and the need for data-driven insights in sports analytics motivated me to create this machine learning platform. This project combines my passion for volleyball with my expertise in machine learning to provide meaningful performance analysis and predictions.
+
 ## What This Does
 
 ### Core Features
